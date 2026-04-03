@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ArrowRight, BookOpen, Compass, Sparkles, MessageCircle } from "lucide-react";
@@ -7,9 +8,18 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-24 pb-20">
       {/* Hero Section */}
-      <section className="relative px-4 pt-32 pb-24 md:pt-48 md:pb-32 flex flex-col items-center justify-center text-center overflow-hidden">
+      <section className="relative px-4 pt-32 pb-24 md:pt-40 md:pb-32 flex flex-col items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10" />
         <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          <div className="relative w-40 h-40 md:w-56 md:h-56 mx-auto mb-6 rounded-3xl overflow-hidden border-4 border-white/50 shadow-2xl rotate-2 hover:rotate-0 transition-all duration-500">
+            <Image 
+              src="/manjunatha.jpg" 
+              alt="Antonio Manjunatha" 
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm text-primary">
             <Sparkles className="h-4 w-4 mr-2" />
             <span className="font-medium tracking-wide">Despierta a tu verdadera naturaleza</span>
