@@ -8,42 +8,63 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-24 pb-20">
       {/* Hero Section */}
-      <section className="relative px-4 pt-32 pb-24 md:pt-40 md:pb-32 flex flex-col items-center justify-center text-center overflow-hidden">
+      <section className="relative px-4 pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden flex items-center min-h-[85vh]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10" />
-        <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <div className="relative w-40 h-40 md:w-56 md:h-56 mx-auto mb-6 rounded-3xl overflow-hidden border-4 border-white/50 shadow-2xl rotate-2 hover:rotate-0 transition-all duration-500">
-            <Image 
-              src="/manjunatha.jpg" 
-              alt="Antonio Manjunatha" 
-              fill
-              className="object-cover"
-              priority
-            />
+        
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          {/* Text Content */}
+          <div className="space-y-8 animate-in fade-in slide-in-from-left-8 duration-1000 order-2 lg:order-1 text-center lg:text-left">
+            <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm text-primary">
+              <Sparkles className="h-4 w-4 mr-2" />
+              <span className="font-medium tracking-wide">Despierta a tu verdadera naturaleza</span>
+            </div>
+            
+            <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
+              La quietud te <span className="text-primary italic font-light font-serif">espera.</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+              Un refugio digital inspirado en la sabiduría de Antonio Manjunatha. 
+              Explora enseñanzas que disuelven la confusión y te guían de vuelta a tu paz inherente.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+              <Button asChild size="lg" className="w-full sm:w-auto text-base shadow-lg shadow-primary/20">
+                <Link href="#enseñanzas">
+                  Explorar enseñanzas
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto text-base bg-white/5 backdrop-blur-sm border-primary/10 hover:bg-primary/5 transition-all">
+                <Link href="/asistente">
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  Conversar con el asistente
+                </Link>
+              </Button>
+            </div>
           </div>
-          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm text-primary">
-            <Sparkles className="h-4 w-4 mr-2" />
-            <span className="font-medium tracking-wide">Despierta a tu verdadera naturaleza</span>
-          </div>
-          <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
-            La quietud te <span className="text-primary italic">espera.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
-            Un refugio digital diseñado para buscadores de consciencia. 
-            Explora las enseñanzas, encuentra claridad en la confusión y retorna a tu paz inherente.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button asChild size="lg" className="w-full sm:w-auto text-base">
-              <Link href="#enseñanzas">
-                Explorar enseñanzas
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto text-base bg-white/50 backdrop-blur-sm">
-              <Link href="/asistente">
-                <MessageCircle className="mr-2 h-4 w-4" />
-                Conversar con el asistente
-              </Link>
-            </Button>
+
+          {/* Image Content */}
+          <div className="relative order-1 lg:order-2 animate-in fade-in zoom-in-95 duration-1000">
+            <div className="relative aspect-[4/5] w-full max-w-[400px] mx-auto lg:ml-auto">
+              <div className="absolute inset-0 bg-primary/10 rounded-[3rem] -rotate-6 scale-95 blur-2xl opacity-50" />
+              <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden border-[12px] border-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] rotate-2 hover:rotate-0 transition-transform duration-700 ease-out">
+                <Image 
+                  src="/manjunatha.jpg" 
+                  alt="Antonio Manjunatha" 
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              {/* Decorative detail */}
+              <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-primary/5 hidden md:block">
+                <div className="flex items-center gap-3">
+                  <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                  <span className="text-[10px] font-bold text-muted-foreground tracking-[0.2em] uppercase">Estado de Presencia</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
